@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: flask-app
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: flask
@@ -17,7 +17,7 @@ spec:
         hostnames: ["github.com"]
       containers:
       - name: flask-app
-        image: aabda2006/flask-app:latest # À remplacer après ton build
+        image: ghcr.io/phantranthienan/flask-app-k8s-insa/flask-app:latest
         imagePullPolicy: Always
         env:
         - name: DB_HOST
